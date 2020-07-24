@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import static junit.framework.TestCase.assertNotNull;
 import static org.springframework.http.HttpMethod.*;
-
+// Teste
 @SpringBootTest(classes = CarrosApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class BaseAPITest {
     @Autowired
