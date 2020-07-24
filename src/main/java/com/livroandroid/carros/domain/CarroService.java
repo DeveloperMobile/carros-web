@@ -3,6 +3,7 @@ package com.livroandroid.carros.domain;
 import com.livroandroid.carros.api.exception.ObjectNotFoundException;
 import com.livroandroid.carros.domain.dto.CarroDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import java.util.List;
@@ -15,8 +16,8 @@ public class CarroService {
     @Autowired
     public CarroRepository rep;
 
-    public List<CarroDTO> getCarros() {
-        return rep.findAll().stream().map(CarroDTO::create).collect(Collectors.toList());
+    public List<CarroDTO> getCarros(Pageable pageable) {
+        return rep.findAll(pageable).stream().map(CarroDTO::create).collect(Collectors.toList());
     }
 
     public CarroDTO getCarroById(Long id) {
@@ -24,8 +25,8 @@ public class CarroService {
         return carro.map(CarroDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
-    public List<CarroDTO> getCarrosByTipo(String tipo) {
-        return rep.findByTipo(tipo).stream().map(CarroDTO::create).collect(Collectors.toList());
+    public List<CarroDTO> getCarrosByTipo(String tipo, Pageable pageable) {
+        return rep.findByTipo(tipo, pageable).stream().map(CarroDTO::create).collect(Collectors.toList());
     }
 
     public CarroDTO insert(Carro carro) {

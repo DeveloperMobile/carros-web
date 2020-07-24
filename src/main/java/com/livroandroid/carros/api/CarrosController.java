@@ -4,6 +4,7 @@ import com.livroandroid.carros.domain.Carro;
 import com.livroandroid.carros.domain.CarroService;
 import com.livroandroid.carros.domain.dto.CarroDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +21,9 @@ public class CarrosController {
     CarroService service;
 
     @GetMapping
-    public ResponseEntity<List<CarroDTO>> get() {
-        return ResponseEntity.ok(service.getCarros());
+    public ResponseEntity<List<CarroDTO>> get(@RequestParam(value = "page", defaultValue = "0") Integer page,
+                                              @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        return ResponseEntity.ok(service.getCarros(PageRequest.of(page, size)));
     }
 
     @GetMapping("/{id}")
@@ -31,8 +33,10 @@ public class CarrosController {
     }
 
     @GetMapping("/tipo/{tipo}")
-    public ResponseEntity<List<CarroDTO>> getCarrosByTipo(@PathVariable("tipo") String tipo) {
-        List<CarroDTO> carros = service.getCarrosByTipo(tipo);
+    public ResponseEntity<List<CarroDTO>> getCarrosByTipo(@PathVariable("tipo") String tipo,
+                                                          @RequestParam(value = "page", defaultValue = "0") Integer page,
+                                                          @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        List<CarroDTO> carros = service.getCarrosByTipo(tipo, PageRequest.of(page, size));
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
