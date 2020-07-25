@@ -1,7 +1,7 @@
-package com.livroandroid.carros.domain;
+package com.livroandroid.carros.api.carros;
 
 import lombok.Data;
-import org.springframework.security.core.GrantedAuthority;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,15 +10,16 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Role implements GrantedAuthority {
+@NoArgsConstructor
+public class Carro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
-
-    @Override
-    public String getAuthority() {
-        return nome;
-    }
+    private String tipo;
+    private String descricao;
+    private String urlFoto;
+    private String urlVideo;
+    private String latitude;
+    private String longitude;
 }

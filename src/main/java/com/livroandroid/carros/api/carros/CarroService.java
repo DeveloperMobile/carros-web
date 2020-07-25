@@ -1,7 +1,6 @@
-package com.livroandroid.carros.domain;
+package com.livroandroid.carros.api.carros;
 
-import com.livroandroid.carros.api.exception.ObjectNotFoundException;
-import com.livroandroid.carros.domain.dto.CarroDTO;
+import com.livroandroid.carros.api.infra.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

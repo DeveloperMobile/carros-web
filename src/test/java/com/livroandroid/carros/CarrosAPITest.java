@@ -1,8 +1,8 @@
 package com.livroandroid.carros;
 
 
-import com.livroandroid.carros.domain.Carro;
-import com.livroandroid.carros.domain.dto.CarroDTO;
+import com.livroandroid.carros.api.carros.Carro;
+import com.livroandroid.carros.api.carros.CarroDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

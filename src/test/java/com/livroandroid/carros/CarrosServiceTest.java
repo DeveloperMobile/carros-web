@@ -1,14 +1,13 @@
 package com.livroandroid.carros;
 
-import com.livroandroid.carros.api.exception.ObjectNotFoundException;
-import com.livroandroid.carros.domain.Carro;
-import com.livroandroid.carros.domain.CarroService;
-import com.livroandroid.carros.domain.dto.CarroDTO;
+import com.livroandroid.carros.api.carros.Carro;
+import com.livroandroid.carros.api.carros.CarroService;
+import com.livroandroid.carros.api.carros.CarroDTO;
+import com.livroandroid.carros.api.infra.exception.ObjectNotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 

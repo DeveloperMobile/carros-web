@@ -1,6 +1,5 @@
-package com.livroandroid.carros.domain.dto;
+package com.livroandroid.carros.api.carros;
 
-import com.livroandroid.carros.domain.Carro;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 

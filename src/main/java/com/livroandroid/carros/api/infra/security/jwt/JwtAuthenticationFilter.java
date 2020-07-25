@@ -1,7 +1,7 @@
 package com.livroandroid.carros.api.security.jwt;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.livroandroid.carros.domain.User;
-import com.livroandroid.carros.domain.dto.UserDTO;
+import com.livroandroid.carros.api.usuarios.User;
+import com.livroandroid.carros.api.usuarios.UserDTO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;

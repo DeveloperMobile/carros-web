@@ -1,4 +1,4 @@
-package com.livroandroid.carros.api.exception;
+package com.livroandroid.carros.api.infra.exception;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;

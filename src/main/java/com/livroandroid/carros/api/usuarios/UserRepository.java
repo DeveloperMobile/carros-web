@@ -1,4 +1,4 @@
-package com.livroandroid.carros.domain;
+package com.livroandroid.carros.api.usuarios;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

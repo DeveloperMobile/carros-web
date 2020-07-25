@@ -1,10 +1,8 @@
-package com.livroandroid.carros.domain.dto;
+package com.livroandroid.carros.api.usuarios;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.livroandroid.carros.domain.Role;
-import com.livroandroid.carros.domain.User;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
