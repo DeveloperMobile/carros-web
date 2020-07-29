@@ -1,7 +1,7 @@
 package com.livroandroid.carros;
 
 
-import com.livroandroid.carros.api.security.jwt.JwtUtil;
+import com.livroandroid.carros.api.infra.security.jwt.JwtUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
