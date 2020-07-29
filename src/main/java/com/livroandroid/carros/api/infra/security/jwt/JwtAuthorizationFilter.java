@@ -1,4 +1,4 @@
-package com.livroandroid.carros.api.security.jwt;
+package com.livroandroid.carros.api.infra.security.jwt;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -44,7 +44,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
         try {
 
-            if(! JwtUtil.isTokenValid(token)) {
+            if(!JwtUtil.isTokenValid(token)) {
                 throw new AccessDeniedException("Acesso negado.");
             }
 

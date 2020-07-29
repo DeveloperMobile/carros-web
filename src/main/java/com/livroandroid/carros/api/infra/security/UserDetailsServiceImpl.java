@@ -1,4 +1,4 @@
-package com.livroandroid.carros.api.security;
+package com.livroandroid.carros.api.infra.security;
 
 import com.livroandroid.carros.api.usuarios.User;
 import com.livroandroid.carros.api.usuarios.UserRepository;
