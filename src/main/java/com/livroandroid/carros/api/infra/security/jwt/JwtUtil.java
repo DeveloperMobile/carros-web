@@ -1,4 +1,4 @@
-package com.livroandroid.carros.api.security.jwt;
+package com.livroandroid.carros.api.infra.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

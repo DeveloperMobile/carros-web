@@ -1,4 +1,5 @@
-package com.livroandroid.carros.api.security.jwt;
+package com.livroandroid.carros.api.infra.security.jwt;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.livroandroid.carros.api.usuarios.User;
 import com.livroandroid.carros.api.usuarios.UserDTO;

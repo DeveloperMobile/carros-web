@@ -1,6 +1,6 @@
-package com.livroandroid.carros.api.security.jwt.handler;
+package com.livroandroid.carros.api.infra.security.jwt.handler;
 
-import com.livroandroid.carros.api.security.jwt.ServletUtil;
+import com.livroandroid.carros.api.infra.security.jwt.ServletUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

@@ -1,4 +1,4 @@
-package com.livroandroid.carros.api.security.jwt;
+package com.livroandroid.carros.api.infra.security.jwt;
 
 import com.google.gson.JsonObject;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.livroandroid.carros.api.security.jwt;
+package com.livroandroid.carros.api.infra.security.jwt;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
