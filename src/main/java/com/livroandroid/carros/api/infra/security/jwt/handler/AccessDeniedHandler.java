@@ -28,7 +28,6 @@ public class AccessDeniedHandler implements org.springframework.security.web.acc
                 = SecurityContextHolder.getContext().getAuthentication();
 
         if (auth != null) {
-
             String json = ServletUtil.getJson("error", "Acesso negado.");
             ServletUtil.write(response, HttpStatus.FORBIDDEN, json);
         }

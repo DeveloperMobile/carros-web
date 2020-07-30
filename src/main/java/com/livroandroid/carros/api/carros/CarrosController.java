@@ -1,8 +1,5 @@
 package com.livroandroid.carros.api.carros;
 
-import com.livroandroid.carros.api.carros.Carro;
-import com.livroandroid.carros.api.carros.CarroService;
-import com.livroandroid.carros.api.carros.CarroDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
