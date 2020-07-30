@@ -1,5 +1,6 @@
 package com.livroandroid.carros.api.infra.security;
 
+import com.livroandroid.carros.api.infra.security.cors.CorsConfig;
 import com.livroandroid.carros.api.infra.security.jwt.JwtAuthenticationFilter;
 import com.livroandroid.carros.api.infra.security.jwt.JwtAuthorizationFilter;
 import com.livroandroid.carros.api.infra.security.jwt.handler.AccessDeniedHandler;
@@ -37,13 +38,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         AuthenticationManager authManager = authenticationManager();
 
-        http
+        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
+                .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/api/v1/login").permitAll()
                 .antMatchers("/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
+                .addFilter(new CorsConfig())
                 .addFilter(new JwtAuthenticationFilter(authManager))
                 .addFilter(new JwtAuthorizationFilter(authManager, userDetailsService))
                 .exceptionHandling()
