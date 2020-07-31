@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
-
+// Update
 @Entity
 @Data
 public class Users implements UserDetails {
