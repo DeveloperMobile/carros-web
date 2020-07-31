@@ -11,18 +11,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
-public class UserController {
+public class UsersController {
     @Autowired
-    private UserService service;
+    private UsersService service;
 
     @GetMapping
     public ResponseEntity get() {
-        List<UserDTO> list = service.getUsers();
+        List<UsersDTO> list = service.getUsers();
         return ResponseEntity.ok(list);
     }
 
     @GetMapping("/info")
-    public UserDTO userInfo(@AuthenticationPrincipal User user) {
-        return UserDTO.create(user);
+    public UsersDTO userInfo(@AuthenticationPrincipal Users users) {
+        return UsersDTO.create(users);
     }
 }

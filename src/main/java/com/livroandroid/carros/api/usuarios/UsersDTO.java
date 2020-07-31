@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserDTO {
+public class UsersDTO {
     private String login;
     private String nome;
     private String email;
@@ -21,19 +21,19 @@ public class UserDTO {
 
     private List<String> roles;
 
-    public static UserDTO create(User user) {
+    public static UsersDTO create(Users users) {
         ModelMapper modelMapper = new ModelMapper();
-        UserDTO dto = modelMapper.map(user, UserDTO.class);
+        UsersDTO dto = modelMapper.map(users, UsersDTO.class);
 
-        dto.roles = user.getRoles().stream()
+        dto.roles = users.getRoles().stream()
                 .map(Role::getNome)
                 .collect(Collectors.toList());
 
         return dto;
     }
 
-    public static UserDTO create(User user, String token) {
-        UserDTO dto = create(user);
+    public static UsersDTO create(Users users, String token) {
+        UsersDTO dto = create(users);
         dto.token = token;
         return dto;
     }

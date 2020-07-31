@@ -1,7 +1,7 @@
 package com.livroandroid.carros.api.infra.security;
 
-import com.livroandroid.carros.api.usuarios.User;
-import com.livroandroid.carros.api.usuarios.UserRepository;
+import com.livroandroid.carros.api.usuarios.Users;
+import com.livroandroid.carros.api.usuarios.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 @Service(value = "userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
-    private UserRepository userRepository;
+    private UsersRepository usersRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByLogin(username);
-        if (user == null) {
+        Users users = usersRepository.findByLogin(username);
+        if (users == null) {
             throw new UsernameNotFoundException("User not found");
         }
-        return user;
+        return users;
     }
 }

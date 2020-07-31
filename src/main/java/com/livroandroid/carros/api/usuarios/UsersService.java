@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService {
+public class UsersService {
     @Autowired
-    private UserRepository rep;
+    private UsersRepository rep;
 
-    public List<UserDTO> getUsers() {
-        return rep.findAll().stream().map(UserDTO::create).collect(Collectors.toList());
+    public List<UsersDTO> getUsers() {
+        return rep.findAll().stream().map(UsersDTO::create).collect(Collectors.toList());
     }
 }

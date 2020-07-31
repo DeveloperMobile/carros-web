@@ -1,8 +1,8 @@
 package com.livroandroid.carros.api.infra.security.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.livroandroid.carros.api.usuarios.User;
-import com.livroandroid.carros.api.usuarios.UserDTO;
+import com.livroandroid.carros.api.usuarios.Users;
+import com.livroandroid.carros.api.usuarios.UsersDTO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -55,12 +55,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                             FilterChain filterChain, Authentication authentication) throws IOException {
-        User user = (User) authentication.getPrincipal();
+        Users users = (Users) authentication.getPrincipal();
 
-        String jwtToken = JwtUtil.createToken(user);
+        String jwtToken = JwtUtil.createToken(users);
 
 //        String json = ServletUtil.getJson("token", jwtToken);
-        String json = UserDTO.create(user, jwtToken).toJson();
+        String json = UsersDTO.create(users, jwtToken).toJson();
         ServletUtil.write(response, HttpStatus.OK, json);
     }
 

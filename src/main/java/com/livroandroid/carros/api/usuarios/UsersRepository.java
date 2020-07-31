@@ -2,6 +2,6 @@ package com.livroandroid.carros.api.usuarios;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findByLogin(String login);
+public interface UsersRepository extends JpaRepository<Users, Long> {
+    Users findByLogin(String login);
 }
